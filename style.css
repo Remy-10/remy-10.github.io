@@ -1,17 +1,79 @@
 body {
-  text-align: center;
-  font-family: monospace;
   background-color: rgb(25, 24, 24);
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: whitesmoke;
-  }
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-  p {
-    color: rgb(142, 158, 158);
-  }
+h1 {
+  color: whitesmoke;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+}
+
+p {
+  color: rgb(142, 158, 158);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.link {
+  color: #f5f5f5;
+  background: transparent;
+  margin: 0 auto;
+  padding: 5px 5px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Fira Code", monospace;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link:before {
+  content: "";
+  border-bottom: 1px solid #ffffff;
+  padding: 0 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  transition: 0.3s;
+}
+
+.link:hover:before {
+  width: 100%;
+  padding: 0;
+}
+
+.link:active {
+  background: #f5f5f5;
+  color: #191818;
+  transition: none;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
 }

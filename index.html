@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
   </head>
 
   <body style="background: #fff; margin: 0; padding: 0">
@@ -22,75 +23,85 @@
         width: 100%;
         max-width: 100vw;
         box-sizing: border-box;
-      "></iframe>
+      "
+    ></iframe>
     <div id="toggle-content" style="display: none">
       <div
-        class="pictures-section"
+        id="picture-box"
         style="
-          width: 100vw;
-          max-width: 100vw;
-          box-sizing: border-box;
-          margin-top: 2rem;
-        ">
-        <div
+          width: 320px;
+          height: 70px;
+          background: #f0f0f0;
+          border: 2px solid #00aaff;
+          border-radius: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 2rem auto 1rem auto;
+          font-family: Montserrat, sans-serif;
+          font-size: 1.2rem;
+          color: #00aaff;
+          transition: background 0.2s;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <select
+          id="picture-select"
           style="
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
-            width: 100%;
-          ">
-          <img
-            src="pictures/bewijs1.png"
-            alt="Bewijs 1"
-            style="
-              display: block;
-              width: 50vw;
-              height: 80vh;
-              object-fit: contain;
-              margin: 0;
-              padding: 0;
-              border: none;
-              min-width: 0;
-            " />
-          <img
-            src="pictures/bewijs2.png"
-            alt="Bewijs 2"
-            style="
-              display: block;
-              width: 50vw;
-              height: 80vh;
-              object-fit: contain;
-              margin: 0;
-              padding: 0;
-              border: none;
-              min-width: 0;
-            " />
-        </div>
-        <div
-          style="
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1rem;
-          ">
-          <img
-            src="pictures/formulas.jpg"
-            alt="Formulas"
-            style="
-              display: block;
-              width: auto;
-              max-width: 90vw;
-              height: 40vh;
-              object-fit: contain;
-              margin: 0 auto;
-              padding: 0;
-              border: none;
-              image-rendering: auto;
-            " />
-        </div>
+            width: 90%;
+            font-size: 1rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #00aaff;
+            background: #fff;
+            color: #00aaff;
+          "
+        >
+          <option value="">LIATE</option>
+          <option value="pictures/aanpassingvandeDifferentiaal.png">
+            Aanpassing van de Differentiaal
+          </option>
+          <option value="pictures/bepaaldeIntegraal.png">
+            Bepaalde Integraal
+          </option>
+          <option value="pictures/booglengteVlakkeKromme.png">
+            Booglengte Vlakke Kromme
+          </option>
+          <option value="pictures/differentiaalFormules.png">
+            Differentiaal Formules
+          </option>
+          <option value="pictures/formules.jpg">Formules</option>
+          <option value="pictures/gevolgSubstitutie.png">
+            Gevolg Substitutie
+          </option>
+          <option value="pictures/hoofdstellingIntegraal.png">
+            Hoofdstelling Integraal
+          </option>
+          <option value="pictures/manteloppervlakte.png">
+            Manteloppervlakte
+          </option>
+          <option value="pictures/middelwaardestellingIntegraal.png">
+            Middelwaardestelling Integraal
+          </option>
+          <option value="pictures/primitieveFormulesIntegralen.png">
+            Primitieve Formules Integralen
+          </option>
+          <option value="pictures/primitieveIntegraal.png">
+            Primitieve Integraal
+          </option>
+          <option value="pictures/tellerAfgeleideNoemer.png">
+            Teller Afgeleide Noemer
+          </option>
+          <option value="pictures/volumeOmwentelingsfiguur.png">
+            Volume Omwentelingsfiguur
+          </option>
+          <option value="pictures/zwaartepunt.png">Zwaartepunt</option>
+        </select>
       </div>
+      <div
+        id="picture-display"
+        style="display: flex; justify-content: center; margin-top: 1rem"
+      ></div>
       <div
         style="
           width: 100vw;
@@ -98,7 +109,8 @@
           justify-content: center;
           align-items: center;
           margin-top: 2rem;
-        ">
+        "
+      >
         <a
           href="https://chat.openai.com/"
           target="_blank"
@@ -121,7 +133,8 @@
           "
           title="Go to ChatGPT"
           onmouseover="this.style.background='#0088cc'"
-          onmouseout="this.style.background='#00aaff'">
+          onmouseout="this.style.background='#00aaff'"
+        >
           <span
             style="
               font-family: 'Cambria Math', 'STIXGeneral', 'DejaVu Sans', 'Arial',
@@ -134,7 +147,7 @@
       </div>
     </div>
     <script>
-      // Toggle content between GeoGebra containers with the 't' key
+      // Toggle content with the 't' key
       document.addEventListener("keydown", function (e) {
         if (e.key === "t" || e.key === "T") {
           const content = document.getElementById("toggle-content");
@@ -142,6 +155,31 @@
             content.style.display === "none" ? "block" : "none";
         }
       });
+
+      // Show selected picture, make long images bigger
+      document.getElementById("picture-select").onchange = function () {
+        const display = document.getElementById("picture-display");
+        display.innerHTML = ""; // Remove previous image
+        const val = this.value;
+        if (val) {
+          const img = document.createElement("img");
+          img.src = val;
+          img.alt = "Gekozen afbeelding";
+          img.onload = function () {
+            // If the image is much taller than wide, make it taller
+            if (img.naturalHeight > img.naturalWidth * 1.5) {
+              img.style.maxHeight = "80vh";
+              img.style.maxWidth = "60vw";
+            } else {
+              img.style.maxWidth = "90vw";
+              img.style.maxHeight = "400px";
+            }
+            img.style.borderRadius = "10px";
+            img.style.boxShadow = "0 2px 8px rgba(0,0,0,0.12)";
+          };
+          display.appendChild(img);
+        }
+      };
     </script>
   </body>
 
